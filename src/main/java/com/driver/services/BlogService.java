@@ -23,7 +23,7 @@ public class BlogService {
     @Autowired
     ImageRepository imageRepository;
 
-    public Blog createAndReturnBlog(Integer userId, String title, String content) {
+    public Blog createAndReturnBlog(Integer userId, String title, String content) throws Exception {
         //create a blog at the current time
         User user=userRepository1.findById(userId).get();
         Blog blog=new Blog();
@@ -39,7 +39,7 @@ public class BlogService {
 
     }
 
-    public void deleteBlog(int blogId){
+    public void deleteBlog(int blogId) throws Exception{
         //delete blog and corresponding images
         Blog blog=blogRepository1.findById(blogId).get();
         List<Image> imageList=blog.getImageList();
