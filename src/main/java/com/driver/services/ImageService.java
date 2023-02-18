@@ -44,6 +44,6 @@ public class ImageService {
         int n1=Integer.parseInt(imgD[0]);
         int n2=Integer.parseInt(imgD[1]);
 
-        return (N1*N2)/(n1*n2);
+        return (N1/n1)*(N2/n2);
     }
 }
